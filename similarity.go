@@ -28,7 +28,7 @@ func FindMostSimilar(query []float64, vectors []Vector) (int, float64) {
 	for _, v := range vectors {
 		dist := euclideanDistance(query, v.Embedding)
 		log.Printf("Distance from query to ID %d (filename: %s): %f", v.ID, v.Filename, dist)
-		if dist < closestDist {
+		if dist < closestDist && dist != 0 {
 			closestDist = dist
 			closestID = v.ID
 		}
