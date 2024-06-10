@@ -28,9 +28,9 @@ var (
 func init() {
 	// Initialize the Ollama client configuration
 	oc = ollamaclient.New()
-	oc.ModelName = "llava-llama3" // Update to the llava-llama3 model
+	oc.ModelName = "llava-llama3"
 	oc.Verbose = true
-	oc.HTTPTimeout = 10 * time.Second
+	oc.HTTPTimeout = 60 * time.Second
 }
 
 // StoreEmbedding stores the embedding of a text or image content
