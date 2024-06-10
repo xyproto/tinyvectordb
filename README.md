@@ -1,2 +1,3 @@
 # tinyvectordb
-A tiny vector database written in pure Go
+
+# THIS IS A WORK IN PROGRESS!
