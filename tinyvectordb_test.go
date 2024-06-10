@@ -25,10 +25,10 @@ func TestEmbeddings(t *testing.T) {
 	}
 
 	// Check distances
-	cat1Cat2ID, cat1Cat2Dist := FindMostSimilar(vectors[0].Embedding, vectors)
+	cat1Cat2ID, cat1Cat2Dist := FindMostSimilar(vectors[0].ID, vectors[0].Embedding, vectors)
 	fmt.Printf("Closest to cat1.png: ID %d, Distance %f\n", cat1Cat2ID, cat1Cat2Dist)
 
-	cat1Dog1ID, cat1Dog1Dist := FindMostSimilar(vectors[2].Embedding, vectors)
+	cat1Dog1ID, cat1Dog1Dist := FindMostSimilar(vectors[2].ID, vectors[2].Embedding, vectors)
 	fmt.Printf("Closest to dog1.png: ID %d, Distance %f\n", cat1Dog1ID, cat1Dog1Dist)
 
 	// Ensure that the distance between cat images is smaller than the distance between cat and dog images

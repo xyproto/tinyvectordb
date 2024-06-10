@@ -21,11 +21,14 @@ func euclideanDistance(a, b []float64) float64 {
 }
 
 // FindMostSimilar returns the ID and distance of the most similar vector to the given vector
-func FindMostSimilar(query []float64, vectors []Vector) (int, float64) {
+func FindMostSimilar(queryID int, query []float64, vectors []Vector) (int, float64) {
 	closestID := -1
 	closestDist := math.MaxFloat64
 
 	for _, v := range vectors {
+		if v.ID == queryID {
+			continue // do not compare with self, skip this one
+		}
 		dist := euclideanDistance(query, v.Embedding)
 		log.Printf("Distance from query to ID %d (filename: %s): %f", v.ID, v.Filename, dist)
 		if dist < closestDist && dist != 0 {
