@@ -1,4 +1,3 @@
-// tinyvectordb.go
 package tinyvectordb
 
 import (
@@ -56,14 +55,13 @@ func StoreEmbedding(embedType, filename string) (string, error) {
 func getEmbedding(embedType, content string) ([]float64, error) {
 	if embedType == "text" {
 		return oc.Embeddings(content)
-	} else {
-		// Assuming content is the path to the image file
-		base64image, err := ollamaclient.Base64EncodeFile(content)
-		if err != nil {
-			return nil, err
-		}
-		return oc.Embeddings(base64image)
 	}
+	// Assuming content is the path to the image file
+	base64image, err := ollamaclient.Base64EncodeFile(content)
+	if err != nil {
+		return nil, err
+	}
+	return oc.Embeddings(base64image)
 }
 
 func GetVectors() []Vector {
