@@ -11,7 +11,7 @@ func TestEmbeddings(t *testing.T) {
 	imageFiles := []string{"img/cat1.png", "img/cat2.png", "img/dog1.png"}
 
 	for _, imageFile := range imageFiles {
-		msg, err := StoreEmbedding("image", imageFile)
+		msg, err := StoreEmbedding(ImageContent, imageFile)
 		if err != nil {
 			t.Fatalf("Failed to store embedding for %s: %v", imageFile, err)
 		}
