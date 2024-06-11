@@ -1,4 +1,3 @@
-// similarity.go
 package tinyvectordb
 
 import (
