@@ -9,6 +9,7 @@ import (
 	"github.com/xyproto/ollamaclient/v2"
 )
 
+// TODO Use an "enum" instead of "text" or "image"
 type Vector struct {
 	ID        int
 	Filename  string // filename of the image
